@@ -1,0 +1,84 @@
+
+/* remove the list style */
+#nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 999999;
+}   
+     
+    /* make the LI display inline */
+    /* it's position relative so that position absolute */
+    /* can be used in submenu */
+    #nav li {
+        float: left;
+        display: block;
+        position: relative;
+        margin: 0px;
+    }
+         
+    /* this is the parent menu */
+    #nav li a {
+        display: block; 
+        padding: 0px 10px 0 10px;
+        border-left: 1px solid #666666;
+        text-decoration: none; 
+        color: #FFFFFF; 
+        text-align: center; 
+        color: #215489;
+    }
+ 
+    #nav li a:hover {
+        color: #CCCCCC;
+    }
+     
+    /* you can make a different style for default selected value */
+    #nav a.selected {
+        color: #CCCCCC;
+    }
+     
+        /* submenu, it's hidden by default */
+        #nav ul {
+        	margin-top: 17px;
+        	position: absolute;
+            left: 0;
+            margin: 0px;
+            padding: 0;
+            list-style: none;
+            text-align: left;
+            display: none;
+            z-index: 1000;
+        }
+         
+        #nav ul li {
+            text-align: left;
+            height: 25px;
+            width: 100%;
+            float: left;
+            background: url(../images/TRANS_white_95.png);
+        }
+         
+        /* display block will make the link fill the whole area of LI */
+        #nav ul a {
+            display: block;
+            height: 25px;
+            line-height: 25px;
+            margin-left: 10px;
+            padding-left: 0px;
+            text-align: left;
+            border: 0px;
+            color: #215489;
+            *border-bottom: 1px dashed #666666;
+            border-bottom: 1px dotted #666666;
+        }
+         
+        #nav ul a:hover {
+            color: #CCCCCC;
+        }
+ 
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+*html #nav ul {
+    margin:0 0 0 -2px;
+}

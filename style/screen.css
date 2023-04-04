@@ -1,0 +1,625 @@
+/*///////////////////////////////////////////////////////
+///
+///	Global Elements
+///
+///////////////////////////////////////////////////////*/
+html {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	*height: 1px;
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	color: #666666;
+	background: #FFFFFF;
+	border: 1px solid white;
+}
+
+li {
+	margin-left: 30px
+}
+
+.clear {
+	clear: both
+}
+
+
+
+
+
+
+/*///////////////////////////////////////////////////////
+///
+///	Textual Elements
+///
+///////////////////////////////////////////////////////*/
+
+H1{
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 22px;
+	margin-bottom: 10px
+}
+
+H2{
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 18px;
+	margin-bottom: 10px
+}
+
+H3{
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 16px;
+	margin-bottom: 10px
+}
+
+
+a{
+	font-size: 10px;
+	text-decoration: none;
+	color: #666666;
+}a:hover{
+	color: #215489;
+}
+
+a.nav{
+	font-size: 10px;
+	text-decoration: none;
+	color: #215489;
+}a.nav:hover{
+	color: #CCCCCC;
+}
+
+.index_item_underline{
+	width: 210px;
+	height: 1px;
+	margin-top: 4px;
+}
+
+.index_item_underline_hover{
+	width: 210px;
+	height: 1px;
+	margin-top: 4px;
+	background: #215489;
+}
+
+.index_item_title{
+	width: 210px;
+	height: 20px;
+	margin-top: 10px;
+	color: #666666;
+}
+.index_item_title_hover{
+	color: #215489;
+}
+
+
+
+/*///////////////////////////////////////////////////////
+///
+///	Box Elements
+///
+///////////////////////////////////////////////////////*/
+
+div.canvas {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	clear: both;
+}
+
+div.header {
+	width: 960px;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: 1px solid #9d9b98;
+	clear: both;
+}
+
+div.subnav{
+	position: relative;
+	top: 20px;
+	left: 230px;
+	width: 730px;
+	height: 350px;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+div.subnav_option{
+	margin-left: 10px;
+	height: 20px;
+	line-height: 20px;
+	border-bottom: 1px dotted #9d9b98;
+	text-align: left;
+	clear: both;
+	cursor: pointer;
+}
+
+div.subnav_option:hover{
+	color: #3399cc;
+}
+
+div.slideshow {
+	width: 960px;
+	height: 580px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #666666;
+	clear: both;
+}
+
+div.column_left{
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 200px;
+	float: left;
+}
+
+div.column_center{
+	width: 550px;
+	background: #888888 url(https://www.italinteriors.ca/images/BG.png) no-repeat center;
+	float: left;
+}
+
+div.column_right{
+	width: 200px;
+	background: #999999 url(https://www.italinteriors.ca/images/BG.png) no-repeat center;
+	float: left;
+}
+
+div.footer {
+	width: 960px;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 1px solid #9d9b98;
+	clear: both;
+}
+
+
+
+
+
+
+
+/*///////////////////////////////////////////////////////
+///
+///	Fancybox
+///
+///////////////////////////////////////////////////////*/
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	height: 40px;
+	width: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1104;
+	display: none
+}
+
+* html #fancybox-loading {
+/* IE6 */
+	position: absolute;
+	margin-top: 0
+}
+
+#fancybox-loading div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 480px;
+	background-image: url(../images/fancybox/fancybox.png)
+}
+
+#fancybox-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #000;
+	z-index: 1100;
+	display: none
+}
+
+* html #fancybox-overlay {
+/* IE6 */
+	position: absolute;
+	width: 100%
+}
+
+#fancybox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none
+}
+
+#fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 20px;
+	z-index: 1101;
+	display: none;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-safari-box-sizing: content-box;
+	box-sizing: content-box
+}
+
+#fancybox-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-safari-box-sizing: content-box;
+	box-sizing: content-box
+}
+
+#fancybox-inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	overflow: hidden;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-safari-box-sizing: content-box;
+	box-sizing: content-box
+}
+
+#fancybox-hide-sel-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent
+}
+
+#fancybox-close {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px 0;
+	cursor: pointer;
+	z-index: 1103;
+	display: none;
+	border: 0
+}
+
+#fancybox_error {
+	color: #444;
+	font: normal 12px/20px Georgia;
+	padding: 7px;
+	margin: 0
+}
+
+#fancybox-content {
+	height: auto;
+	width: auto;
+	padding: 0;
+	margin: 0
+}
+
+#fancybox-img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	line-height: 0;
+	vertical-align: top;
+	-ms-interpolation-mode: bicubic
+}
+
+#fancybox-frame {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block
+}
+
+#fancybox-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-family: Georgia;
+	font-size: 12px;
+	z-index: 1102
+}
+
+.fancybox-title-inside {
+	padding: 10px 0;
+	text-align: center;
+	color: #333
+}
+
+.fancybox-title-outside {
+	padding-top: 5px;
+	color: #FFF;
+	text-align: center;
+	font-weight: 700
+}
+
+.fancybox-title-over {
+	color: #FFF;
+	text-align: left
+}
+
+#fancybox-title-over {
+	padding: 10px;
+	background-image: url(../images/fancybox/fancy_title_over.png);
+	display: block
+}
+
+#fancybox-title-wrap {
+	display: inline-block
+}
+
+#fancybox-title-wrap span {
+	height: 32px;
+	float: left
+}
+
+#fancybox-title-left {
+	padding-left: 15px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -90px;
+	background-repeat: no-repeat
+}
+
+#fancybox-title-main {
+	font-weight: 700;
+	line-height: 29px;
+	background-image: url(../images/fancybox/fancybox-x.png);
+	background-position: 0 -40px;
+	color: #FFF
+}
+
+#fancybox-title-right {
+	padding-left: 15px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -55px -90px;
+	background-repeat: no-repeat
+}
+
+#fancybox-left,#fancybox-right {
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	width: 35%;
+	cursor: pointer;
+	outline: none;
+	background-image: url(https://www.italinteriors.ca/images/fancybox/blank.gif);
+	z-index: 1102;
+	display: none
+}
+
+#fancybox-left {
+	left: 0
+}
+
+#fancybox-right {
+	right: 0
+}
+
+#fancybox-left-ico,#fancybox-right-ico {
+	position: absolute;
+	top: 50%;
+	left: -9999px;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	cursor: pointer;
+	z-index: 1102;
+	display: block;
+	border: 0
+}
+
+#fancybox-left-ico {
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -30px
+}
+
+#fancybox-right-ico {
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -60px
+}
+
+#fancybox-left:hover,#fancybox-right:hover {
+	visibility: visible
+/* IE6 */
+}
+
+#fancybox-left:hover span {
+	left: 20px
+}
+
+#fancybox-right:hover span {
+	left: auto;
+	right: 20px
+}
+
+.fancy-bg {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 20px;
+	height: 20px;
+	z-index: 1001
+}
+
+#fancy-bg-n {
+	top: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url(../images/fancybox/fancybox-x.png)
+}
+
+#fancy-bg-ne {
+	top: -20px;
+	right: -20px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -162px
+}
+
+#fancy-bg-e {
+	top: 0;
+	right: -20px;
+	height: 100%;
+	background-image: url(https://www.italinteriors.ca/images/fancybox-y.png);
+	background-position: -20px 0
+}
+
+#fancy-bg-se {
+	bottom: -20px;
+	right: -20px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -182px
+}
+
+#fancy-bg-s {
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url(../images/fancybox/fancybox-x.png);
+	background-position: 0 -20px
+}
+
+#fancy-bg-sw {
+	bottom: -20px;
+	left: -20px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -142px
+}
+
+#fancy-bg-w {
+	top: 0;
+	left: -20px;
+	height: 100%;
+	background-image: url(../images/fancybox/fancybox-y.png)
+}
+
+#fancy-bg-nw {
+	top: -20px;
+	left: -20px;
+	background-image: url(../images/fancybox/fancybox.png);
+	background-position: -40px -122px
+}
+
+/* IE */
+#fancybox-loading.fancybox-ie div {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_loading.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-close {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_close.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-title-over {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_title_over.png',sizingMethod='scale');
+	zoom: 1
+}
+
+.fancybox-ie #fancybox-title-left {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_title_left.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-title-main {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_title_main.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-title-right {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_title_right.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-left-ico {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_nav_left.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-right-ico {
+	background: transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_nav_right.png',sizingMethod='scale')
+}
+
+.fancybox-ie .fancy-bg {
+	background: transparent!important
+}
+
+.fancybox-ie #fancy-bg-n {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_n.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancy-bg-ne {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_ne.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancy-bg-e {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_e.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancy-bg-se {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_se.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancy-bg-s {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_s.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancy-bg-sw {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_sw.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancy-bg-w {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_w.png',sizingMethod='scale')
+}
+
+.fancybox-ie #fancy-bg-nw {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_nw.png',sizingMethod='scale')
+}

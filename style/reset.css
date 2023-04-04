@@ -1,0 +1,59 @@
+/*///////////////////////////////////////////////////////
+///
+///	Global Reset
+///
+///////////////////////////////////////////////////////*/
+
+html, body, div, span, applet, object, iframe, caption,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+	vertical-align: baseline;
+	font-family: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-safari-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:focus {
+	outline: 0;
+	outline: none;
+}
+
+/*for FireFox*/
+input::-moz-focus-inner{   
+	outline: 0;
+	border : 0px;
+	outline: none;
+} 
+
+/*for IE8 */
+input:focus,{     
+	outline : none; 
+}
+
+/* tables still need cellspacing="0" in the markup */
+
+caption {
+	font-weight: normal;
+	text-align: left;
+}
+
+/* remove possible quote marks (") from <q> & <blockquote> */
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
