@@ -72,31 +72,38 @@
 			});
 			
 						
-			//Handle the rollover
-			$('.index_item').mouseenter(function(){
-				$(this).children('.index_item_title').addClass('index_item_title_hover');
-				$(this).children('.index_item_underline').addClass('index_item_underline_hover');
+			
+			$('#slides').slides({
+				play: 3000,
+				crossfade: true,
+				slideSpeed: 500,
+				fadeSpeed: 2000,
+				effect: 'fade',
+				preload: true,
+				preloadImage: 'images/spinner.gif',
+				container: 'slides_container',
+				autoHeight: false,
+				generateNextPrev: false,
+				next: 'BTN_next',
+				prev: 'BTN_prev',
+				generatePagination: false,
+				pagination: false
 			});
 			
-			$('.index_item').mouseleave(function(){
-				$(this).children('.index_item_title').removeClass('index_item_title_hover');
-				$(this).children('.index_item_underline').removeClass('index_item_underline_hover');
+			$('#slides').on('click', function() {
+				location.href = 'categories.php';
 			});
 			
-			$('.index_item').click(function(){
-									location.href='items.php?cat_ID=' + $(this).attr('cat_ID') + '&subcat_ID=' + $(this).attr('subcat_ID');
-							});
 		});
 	
 	</script>
-
 
 </head>
 
 <body>
 
 	<div id="canvas" class="canvas">
-		
+	
 		<script>
 	//OK? Go!
 	$(document).ready(function(){
@@ -142,7 +149,7 @@
 
 <div id="header" class="header" style="position: relative; z-index: 999999;">
 
-	<a href="index.php.html">
+	<a href="index.php">
 		<img src="images/IMG_ital_logo.png" alt="Italinteriors" width="130" height="21" style="float: left;" />
 	</a>
 
@@ -210,7 +217,7 @@
 		    -->
 
 		    <li style="height: 29px;">
-		    	<a href="categories.php.html" class="nav" style="border-left: 0px !important;">Products</a>
+		    	<a href="categories.php" class="nav" style="border-left: 0px !important;">Products</a>
 		    </li>
 
 		    <!-- <li style="height: 29px;">
@@ -218,11 +225,11 @@
 		    </li> -->
 
 		    <li style="height: 29px;">
-		    	<a href="about.php.html" class="nav">About Us</a>
+		    	<a href="about.php" class="nav">About Us</a>
 		    </li>
 
 		    <li style="height: 29px;">
-		    	<a href="contact.php.html" class="nav">Contact Us</a>
+		    	<a href="contact.php" class="nav">Contact Us</a>
 		    </li>
 
 		</ul>
@@ -237,26 +244,70 @@
 
 </div>
 		
-		<!--
-		<div id="column_left" class="column_left" style="">
-		
-			<div style="height: 30px; color: #215489; border-bottom: 1px dotted #666666; border-bottom: none;">
-				&nbsp;
-			</div>
-
-			<div style="line-height: 1.5em; padding-top: 10px; padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px;">
-				&nbsp;
-			</div>
-
+		<div id="slides" style="height: 500px; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; z-index: 1; overflow: hidden;">
+			<div class="slides_container" style="height: 500px; z-index: 1;">
+								
+				<div><img src="images/uploads/Flexform&#32;Groundpiece.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/92_extrasoft01.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/90_xila&#32;09_1&#32;byDuilioBitetto.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/25_lc2_gallery11.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/89_Flexform_Groundpiece&#32;2.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/Aprile&#32;wood&#32;frontal&#32;by&#32;tommasosartori_high.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/GR&#32;Air&#32;Desk&#32;and&#32;Air&#32;Unit.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/duemilaotto&#32;+&#32;b15.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/Porro&#32;Storage&#32;2.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/flexform&#32;margaret&#32;bed.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/iceland.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/my&#32;world.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/acerbis&#32;smartwall.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/duemilaotto&#32;3.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/lifesteel.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/fiumi&#32;st&#32;sabbia.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/Softdream.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/sarpi.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/GR&#32;Air&#32;Desk.jpg" width="960" height="500" /></div>
+				
+								
+				<div><img src="images/uploads/Porro&#32;Storage&#32;1.jpg" width="960" height="500" /></div>
+				
+							</div>
 		</div>
-		-->
-		
-		<div style="width: 100%; margin-left: 20px; margin-top: 20px; float: left;">
-			<iframe id='shrFrm' src='https://vsr.architonic.com/8201836/' style='width:100%; height:890px;  margin: 0; border: none; overflow: hidden;'></iframe>
-			<script type='text/javascript'>var regex=new RegExp('[\?&]shrPrm=([^&#]*)');var res=regex.exec(window.location.href);var shrPrm=(res!=null?decodeURIComponent(res[1]):'');if(''!=shrPrm)document.getElementById('shrFrm').src='https://vsr.architonic.com/'+shrPrm;</script>
-		</div>
-		
-		<br class="clear" />
 
 		<div id="footer" class="footer">
 	<div style="width: 960px; margin-top: 21px;">
@@ -294,32 +345,8 @@
 </div>
 <br class="clear" />
 	</div>
-
+	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

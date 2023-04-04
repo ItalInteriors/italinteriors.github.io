@@ -71,9 +71,114 @@
 				overlayOpacity:			0.5
 			});
 			
-					});
+						
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'images/spinner.gif',
+				effect: 'slide',
+				crossfade: true,
+				slideSpeed: 500,
+				fadeSpeed: 350,
+				generateNextPrev: false,
+				next: 'BTN_next',
+				prev: 'BTN_prev',
+				generatePagination: false,
+				pagination: true,
+				paginationClass: 'pagination',
+				animationStart: function() {
+					$('#caption').html('');
+				},
+				animationComplete: function(current){
+					var current_slide_ID = "#slidenum_" + current;
+					var caption = $(current_slide_ID).attr('caption');
+					var credit = $(current_slide_ID).attr('credit');
+					$('#caption').html(caption + ' ' + '<i>' + credit + '</i>');
+				}
+			});
+			
+			//PREV & NEXT BTNS
+			$('.BTN_next').hover(function(){
+				$(this).fadeTo(100, 100);
+			});
+			
+			$('.BTN_next, .BTN_prev').fadeTo(0, 0);
+			$('.BTN_next, .BTN_prev').hover(
+			  function () {
+			    $(this).fadeTo(250, 1);
+			  }, 
+			  function () {
+			    $(this).fadeTo(250, 0);
+			  }
+			);
+
+			//Keyboard control
+			$(document).focus();
+			$(document).keyup(function(event){
+				if(event.keyCode == 37){
+					//PREV
+					//alert('PREV');
+					$('#BTN_prev').click();
+				}
+				if(event.keyCode == 39){
+					//NEXT
+					$('#BTN_next').click();
+				}
+			});
+			
+			
+			//Mousewheel handler
+			$('#slides').bind('mousewheel', function(event, delta) {
+	            var dir = delta > 0 ? 'up' : 'down',
+	                vel = Math.abs(delta);
+	            //$(this).text(dir + ' at a velocity of ' + vel);
+	            if(dir == 'down'){
+	            	$('#BTN_next').click();
+	            }else if(dir == 'up'){
+	            	$('#BTN_prev').click();
+	            }
+	            return false;
+	        });
+	        
+	        
+	        //Init the caption & credit
+	        			$('#caption').html(' <i></i>');
+
+		});
 	
 	</script>
+	
+	
+	<style>
+		.pagination {
+			width: 200px;
+			margin: 0px;
+			margin-right: 20px;
+			padding: 0px;
+			float: left;
+		}
+		
+		.pagination li {
+			width: 60px;
+			height: 55px;
+			margin: 0px;
+			margin-right: 10px;
+			list-style: none;
+			float: left;
+		}
+		
+		.pagination li a {
+			display: block;
+			width: 60px;
+			height: 45px;
+			float: left;
+		}
+		
+		.pagination li.current a {
+			width: 60px;
+			height: 45px;
+			border-bottom: 1px solid #1e90c1;
+		}
+	</style>
 
 
 </head>
@@ -127,7 +232,7 @@
 
 <div id="header" class="header" style="position: relative; z-index: 999999;">
 
-	<a href="index.php.html">
+	<a href="index.php">
 		<img src="images/IMG_ital_logo.png" alt="Italinteriors" width="130" height="21" style="float: left;" />
 	</a>
 
@@ -195,7 +300,7 @@
 		    -->
 
 		    <li style="height: 29px;">
-		    	<a href="categories.php.html" class="nav" style="border-left: 0px !important;">Products</a>
+		    	<a href="categories.php" class="nav" style="border-left: 0px !important;">Products</a>
 		    </li>
 
 		    <!-- <li style="height: 29px;">
@@ -203,11 +308,11 @@
 		    </li> -->
 
 		    <li style="height: 29px;">
-		    	<a href="about.php.html" class="nav">About Us</a>
+		    	<a href="about.php" class="nav">About Us</a>
 		    </li>
 
 		    <li style="height: 29px;">
-		    	<a href="contact.php.html" class="nav">Contact Us</a>
+		    	<a href="contact.php" class="nav">Contact Us</a>
 		    </li>
 
 		</ul>
@@ -222,14 +327,64 @@
 
 </div>
 		
-		<div id="column_left" class="column_left">
-			<div style="height: 30px; color: #215489; border-bottom: 1px dotted #666666;">CONTACT INFO</div><br />
-			
-			359 King Street East<br />Toronto, Ontario<br />M5A 1L1<br /><br />T 416.366.9540<br />F 416.366.4915<br /><br />Hours of Operation:<br />Monday-Friday<br />9:30am - 5:30pm<br />Saturday<br />11:00am - 5:00pm<br /><br />General Inquiries:<br /><a href="mailto: info@italinteriors.ca" target="_blank">info@italinteriors.ca</a>
-		</div>
-		
-		<div id="map_canvas" style="margin-left: 20px; margin-top: 50px; margin-bottom: 20px; width: 740px; height: 550px; float: left;">
-			<iframe width="740" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Italinteriors+Ltd,+359+King+Street+East,+Toronto,+Ontario&amp;aq=3&amp;sll=43.652068,-79.364536&amp;sspn=0.014625,0.033023&amp;gl=ca&amp;g=359+King+St+E,+Toronto,+ON+M5A+1L1&amp;ie=UTF8&amp;hq=Italinteriors+Ltd,&amp;hnear=359+King+St+E,+Toronto,+Toronto+Division,+Ontario+M5A+1L1&amp;cid=3653192462626736064&amp;ll=43.6521,-79.364462&amp;spn=0.034156,0.063429&amp;z=14&amp;iwloc=near&amp;output=embed"></iframe>
+		<div style="margin-left: 20px; margin-top: 20px; float: left;">
+				
+				<div style="position: absolute; *margin-left: -220px; width: 200px; z-index: 3;">
+					<div style="height: 30px; color: #215489; border-bottom: 1px dotted #666666;">ABOUT US</div>
+					<div style="border-bottom: 1px dotted #666666; line-height: 1.5em; padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px; z-index: 3;">
+												
+						For more than 35 years, italinteriors has been pioneering modern design in Toronto. The company represents some of the most important manufacturers in contemporary Italian furniture: Cassina, Flexform, Acerbis, Fiam and Boffi Kitchens and Bathrooms. A strong belief in classic design has been the backbone of italinteriors and continues with the new generation that is now leading the showroom with the personal touch and typical Italian flair that distinguishes the business from its competitors.					</div>
+				</div>
+				
+				
+				<div id="caption" style="positon: absolute; margin-left: 220px; width: 740px; height: 30px; color: #215489; z-index: 2;"></div>
+				
+				<div id="slides" style="position: relative; width: 960px; height: 550px; margin-bottom: 20px; overflow: hidden;">
+					
+					
+					
+					<ul class="pagination" style="margin-top: 290px;">
+										
+		   				<li ><a href="about.php#0"><img src="images/uploads/55_10102102_B-195.jpg" width="60" height="40" alt=""></a></li>
+		   								
+		   				<li ><a href="about.php#1"><img src="images/uploads/56_utrecht_gallery02.jpg" width="60" height="40" alt=""></a></li>
+		   								
+		   				<li style="margin-right: 0px;" ><a href="about.php#2"><img src="images/uploads/51_Zone&#32;in&#32;Corian&#32;byDuilioBitetto_high.jpg" width="60" height="40" alt=""></a></li>
+		   								
+		   				<li ><a href="about.php#3"><img src="images/uploads/62_universal&#32;iceland&#32;cut&#32;pipe&#32;byTommasoSartori&#32;high.jpg" width="60" height="40" alt=""></a></li>
+		   								
+		   				<li ><a href="about.php#4"><img src="images/uploads/64_el_dom_gallery06.jpg" width="60" height="40" alt=""></a></li>
+		   								
+		   				<li style="margin-right: 0px;" ><a href="about.php#5"><img src="images/uploads/663_temp_home_01.jpg" width="60" height="40" alt=""></a></li>
+		   					   			</ul>
+		   							
+					<div id="BTN_prev" class="BTN_prev" style="position: absolute; top: 0px; left: 220px; z-index: 10; width: 150px; height: 550px; background: url(images/ICON_arrow_left.png) no-repeat center;"><img src="images/shim.png" width="150" height="550" border="0" style="position: relative;" /></div>
+					<div class="slides_container" style="width: 740px; height: 550px; overflow: hidden; float: left;">
+
+												
+						<div id="slidenum_1" caption="" credit=""><img src="images/uploads/55_10102102_B-195.jpg" width="740" height="550" /></div>
+						
+												
+						<div id="slidenum_2" caption="" credit=""><img src="images/uploads/56_utrecht_gallery02.jpg" width="740" height="550" /></div>
+						
+												
+						<div id="slidenum_3" caption="" credit=""><img src="images/uploads/51_Zone&#32;in&#32;Corian&#32;byDuilioBitetto_high.jpg" width="740" height="550" /></div>
+						
+												
+						<div id="slidenum_4" caption="" credit=""><img src="images/uploads/62_universal&#32;iceland&#32;cut&#32;pipe&#32;byTommasoSartori&#32;high.jpg" width="740" height="550" /></div>
+						
+												
+						<div id="slidenum_5" caption="" credit=""><img src="images/uploads/64_el_dom_gallery06.jpg" width="740" height="550" /></div>
+						
+												
+						<div id="slidenum_6" caption="" credit=""><img src="images/uploads/663_temp_home_01.jpg" width="740" height="550" /></div>
+						
+										
+					</div>
+					<div id="BTN_next" class="BTN_next" style="position: absolute; top: 0px; right: 0px; z-index: 10; width: 150px; height: 550px; background: url(images/ICON_arrow_right.png) no-repeat center;"><img src="images/shim.png" width="150" height="550" border="0" style="position: relative;" /></div>
+
+				</div>
+
 		</div>
 
 		<div id="footer" class="footer">

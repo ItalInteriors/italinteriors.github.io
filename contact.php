@@ -71,39 +71,17 @@
 				overlayOpacity:			0.5
 			});
 			
-						
-			
-			$('#slides').slides({
-				play: 3000,
-				crossfade: true,
-				slideSpeed: 500,
-				fadeSpeed: 2000,
-				effect: 'fade',
-				preload: true,
-				preloadImage: 'images/spinner.gif',
-				container: 'slides_container',
-				autoHeight: false,
-				generateNextPrev: false,
-				next: 'BTN_next',
-				prev: 'BTN_prev',
-				generatePagination: false,
-				pagination: false
-			});
-			
-			$('#slides').on('click', function() {
-				location.href = 'categories.php';
-			});
-			
-		});
+					});
 	
 	</script>
+
 
 </head>
 
 <body>
 
 	<div id="canvas" class="canvas">
-	
+		
 		<script>
 	//OK? Go!
 	$(document).ready(function(){
@@ -149,7 +127,7 @@
 
 <div id="header" class="header" style="position: relative; z-index: 999999;">
 
-	<a href="index.php.html">
+	<a href="index.php">
 		<img src="images/IMG_ital_logo.png" alt="Italinteriors" width="130" height="21" style="float: left;" />
 	</a>
 
@@ -217,7 +195,7 @@
 		    -->
 
 		    <li style="height: 29px;">
-		    	<a href="categories.php.html" class="nav" style="border-left: 0px !important;">Products</a>
+		    	<a href="categories.php" class="nav" style="border-left: 0px !important;">Products</a>
 		    </li>
 
 		    <!-- <li style="height: 29px;">
@@ -225,11 +203,11 @@
 		    </li> -->
 
 		    <li style="height: 29px;">
-		    	<a href="about.php.html" class="nav">About Us</a>
+		    	<a href="about.php" class="nav">About Us</a>
 		    </li>
 
 		    <li style="height: 29px;">
-		    	<a href="contact.php.html" class="nav">Contact Us</a>
+		    	<a href="contact.php" class="nav">Contact Us</a>
 		    </li>
 
 		</ul>
@@ -244,69 +222,14 @@
 
 </div>
 		
-		<div id="slides" style="height: 500px; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; z-index: 1; overflow: hidden;">
-			<div class="slides_container" style="height: 500px; z-index: 1;">
-								
-				<div><img src="images/uploads/Flexform&#32;Groundpiece.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/92_extrasoft01.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/90_xila&#32;09_1&#32;byDuilioBitetto.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/25_lc2_gallery11.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/89_Flexform_Groundpiece&#32;2.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/Aprile&#32;wood&#32;frontal&#32;by&#32;tommasosartori_high.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/GR&#32;Air&#32;Desk&#32;and&#32;Air&#32;Unit.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/duemilaotto&#32;+&#32;b15.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/Porro&#32;Storage&#32;2.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/flexform&#32;margaret&#32;bed.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/iceland.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/my&#32;world.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/acerbis&#32;smartwall.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/duemilaotto&#32;3.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/lifesteel.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/fiumi&#32;st&#32;sabbia.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/Softdream.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/sarpi.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/GR&#32;Air&#32;Desk.jpg" width="960" height="500" /></div>
-				
-								
-				<div><img src="images/uploads/Porro&#32;Storage&#32;1.jpg" width="960" height="500" /></div>
-				
-							</div>
+		<div id="column_left" class="column_left">
+			<div style="height: 30px; color: #215489; border-bottom: 1px dotted #666666;">CONTACT INFO</div><br />
+			
+			359 King Street East<br />Toronto, Ontario<br />M5A 1L1<br /><br />T 416.366.9540<br />F 416.366.4915<br /><br />Hours of Operation:<br />Monday-Friday<br />9:30am - 5:30pm<br />Saturday<br />11:00am - 5:00pm<br /><br />General Inquiries:<br /><a href="mailto: info@italinteriors.ca" target="_blank">info@italinteriors.ca</a>
+		</div>
+		
+		<div id="map_canvas" style="margin-left: 20px; margin-top: 50px; margin-bottom: 20px; width: 740px; height: 550px; float: left;">
+			<iframe width="740" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Italinteriors+Ltd,+359+King+Street+East,+Toronto,+Ontario&amp;aq=3&amp;sll=43.652068,-79.364536&amp;sspn=0.014625,0.033023&amp;gl=ca&amp;g=359+King+St+E,+Toronto,+ON+M5A+1L1&amp;ie=UTF8&amp;hq=Italinteriors+Ltd,&amp;hnear=359+King+St+E,+Toronto,+Toronto+Division,+Ontario+M5A+1L1&amp;cid=3653192462626736064&amp;ll=43.6521,-79.364462&amp;spn=0.034156,0.063429&amp;z=14&amp;iwloc=near&amp;output=embed"></iframe>
 		</div>
 
 		<div id="footer" class="footer">
@@ -345,8 +268,32 @@
 </div>
 <br class="clear" />
 	</div>
-	
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
