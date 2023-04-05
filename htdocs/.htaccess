@@ -1,0 +1,11 @@
+# redirect www to non-www
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+</IfModule>
+
+Redirect 301 /index.php /
+Redirect 301 /about.php /about
+Redirect 301 /categories.php /products
+Redirect 301 /contact.php /contact
