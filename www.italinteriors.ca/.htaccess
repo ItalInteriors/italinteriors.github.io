@@ -1,0 +1,9 @@
+# redirect www to non-www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+Redirect /index.php /
+Redirect /about.php /about
+Redirect /categories.php /products
+Redirect /contact.php /contact

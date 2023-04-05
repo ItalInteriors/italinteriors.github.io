@@ -13,7 +13,7 @@
 	<meta name="ROBOTS" content="index,follow">
 	<meta name="KEYWORDS" content="italinteriors">
 	<meta name="DESCRIPTION" content="Italinteriors.ca">
-	<base href="http://italinteriors.pages.dev" />
+
 	<meta http-equiv="cache-control" content="max-age=0" />
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="expires" content="0" />
@@ -71,22 +71,7 @@
 				overlayOpacity:			0.5
 			});
 			
-						
-			//Handle the rollover
-			$('.index_item').mouseenter(function(){
-				$(this).children('.index_item_title').addClass('index_item_title_hover');
-				$(this).children('.index_item_underline').addClass('index_item_underline_hover');
-			});
-			
-			$('.index_item').mouseleave(function(){
-				$(this).children('.index_item_title').removeClass('index_item_title_hover');
-				$(this).children('.index_item_underline').removeClass('index_item_underline_hover');
-			});
-			
-			$('.index_item').click(function(){
-									location.href='items.php?cat_ID=' + $(this).attr('cat_ID') + '&subcat_ID=' + $(this).attr('subcat_ID');
-							});
-		});
+					});
 	
 	</script>
 
@@ -109,7 +94,6 @@
 	            $('ul', this).slideUp(0);
 	        }
 	    );
-
 
 	    //Handle the Search box
 	    $('#search').focus(function(){
@@ -142,7 +126,7 @@
 
 <div id="header" class="header" style="position: relative; z-index: 999999;">
 
-	<a href="index/">
+	<a href="/">
 		<img src="/images/IMG_ital_logo.png" alt="Italinteriors" width="130" height="21" style="float: left;" />
 	</a>
 
@@ -152,17 +136,17 @@
 
 
 		    <li style="height: 29px;">
-		    	<a href="categories/" class="nav" style="border-left: 0px !important;">Products</a>
+		    	<a href="/products" class="nav" style="border-left: 0px !important;">Products</a>
 		    </li>
 
-	
+
 
 		    <li style="height: 29px;">
-		    	<a href="about/" class="nav">About Us</a>
+		    	<a href="/about" class="nav">About Us</a>
 		    </li>
 
 		    <li style="height: 29px;">
-		    	<a href="contact/" class="nav">Contact Us</a>
+		    	<a href="/contact" class="nav">Contact Us</a>
 		    </li>
 
 		</ul>
@@ -176,14 +160,15 @@
 
 </div>
 		
-
-		
-		<div style="width: 100%; margin-left: 20px; margin-top: 20px; float: left;">
-			<iframe id='shrFrm' src='https://vsr.architonic.com/8201836/' style='width:100%; height:890px;  margin: 0; border: none; overflow: hidden;'></iframe>
-			<script type='text/javascript'>var regex=new RegExp('[\?&]shrPrm=([^&#]*)');var res=regex.exec(window.location.href);var shrPrm=(res!=null?decodeURIComponent(res[1]):'');if(''!=shrPrm)document.getElementById('shrFrm').src='https://vsr.architonic.com/'+shrPrm;</script>
+		<div id="column_left" class="column_left">
+			<div style="height: 30px; color: #215489; border-bottom: 1px dotted #666666;">CONTACT INFO</div><br />
+			
+			359 King Street East<br />Toronto, Ontario<br />M5A 1L1<br /><br />T 416.366.9540<br />F 416.366.4915<br /><br />Hours of Operation:<br />Monday-Friday<br />9:30am - 5:30pm<br />Saturday<br />11:00am - 5:00pm<br /><br />General Inquiries:<br /><a href="mailto: info@italinteriors.ca" target="_blank">info@italinteriors.ca</a>
 		</div>
 		
-		<br class="clear" />
+		<div id="map_canvas" style="margin-left: 20px; margin-top: 50px; margin-bottom: 20px; width: 740px; height: 550px; float: left;">
+			<iframe width="740" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Italinteriors+Ltd,+359+King+Street+East,+Toronto,+Ontario&amp;aq=3&amp;sll=43.652068,-79.364536&amp;sspn=0.014625,0.033023&amp;gl=ca&amp;g=359+King+St+E,+Toronto,+ON+M5A+1L1&amp;ie=UTF8&amp;hq=Italinteriors+Ltd,&amp;hnear=359+King+St+E,+Toronto,+Toronto+Division,+Ontario+M5A+1L1&amp;cid=3653192462626736064&amp;ll=43.6521,-79.364462&amp;spn=0.034156,0.063429&amp;z=14&amp;iwloc=near&amp;output=embed"></iframe>
+		</div>
 
 		<div id="footer" class="footer">
 	<div style="width: 960px; margin-top: 21px;">
